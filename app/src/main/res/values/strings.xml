@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Gario</string>
+
+    <string name="login">Login</string>
+    <string name="correo_electronico">Correo Electronico</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="no_tienes_cuenta">¿No tienes Cuenta?</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="registrarme">Registrarme</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="eslogan">Tu Mejor Opción Para El Ahorro Inteligente</string>
+    <string name="cambio">¡Inicia Tu Cambio Ahora!</string>
+
+
+</resources>
