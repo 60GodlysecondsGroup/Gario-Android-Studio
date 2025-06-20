@@ -2,21 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main"
     tools:context=".Inicio_Sesion_Gario">
 
-    <!-- Fondo con opacidad -->
 
-    <!-- Logo -->
-
-    <!-- Eslogan -->
     <ImageView
         android:id="@+id/fondo"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:alpha="0.8"
+        android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
         android:src="@drawable/fondo_gario"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,6 +34,7 @@
         android:layout_width="250dp"
         android:layout_height="120dp"
         android:layout_marginTop="72dp"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/gario_logo_sin_fondo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -47,6 +45,7 @@
         android:id="@+id/eslogan"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/eslogan"
         android:gravity="center"
         android:text="@string/eslogan"
         android:textAlignment="center"

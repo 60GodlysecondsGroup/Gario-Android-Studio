@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#0F0D3E">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:minHeight="48dp"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/bienvenido_a_gario"
+            android:src="@drawable/gario_logo_sin_fondo" />
+
+        <!-- Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/fondo_blanco"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:text="@string/bienvenido_a_gario"
+                android:textColor="#0F0D3E"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Email -->
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:height="48dp"
+                android:background="@null"
+                android:drawableBottom="@drawable/linea"
+                android:hint="@string/Email"
+                android:inputType="textEmailAddress"
+                android:autofillHints="emailAddress"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingBottom="8dp"
+                android:textColor="#0F0D3E"
+                android:textColorHint="#666666" />
+
+            <!-- Contraseña -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:height="48dp"
+                    android:background="@null"
+                    android:drawableBottom="@drawable/linea"
+                    android:hint="@string/Contraseña"
+                    android:autofillHints="password"
+                    android:inputType="textPassword"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    android:paddingBottom="8dp"
+                    android:textColor="#0F0D3E"
+                    android:textColorHint="#666666" />
+
+                <ImageView
+                    android:id="@+id/showPasswordIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/mostrar_contraseña"
+                    android:padding="4dp" />
+            </RelativeLayout>
+
+            <!-- ¿Olvidaste la contraseña? -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/olvidate_tu_contraseña"
+                android:textColor="#0F0D3E"
+                android:textSize="12sp" />
+
+            <!-- Botón de iniciar sesión -->
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#FF7F50"
+                android:text="@string/iniciar_sesion"
+                android:textColor="#0F0D3E"
+                android:textStyle="bold" />
+
+            <!-- ¿Primera vez? -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/es_tu_primera_vez"
+                android:textColor="#0F0D3E"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btnRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/registrate"
+                android:textColor="#0F0D3E"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

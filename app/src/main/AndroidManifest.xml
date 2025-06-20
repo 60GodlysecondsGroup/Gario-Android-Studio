@@ -13,20 +13,21 @@
         android:theme="@style/Theme.Gario"
         tools:targetApi="31">
         <activity
-            android:name=".registro_gario"
+            android:name=".Inicio_sesion_user"
             android:exported="false" />
+        <!-- Pantalla de inicio -->
         <activity
             android:name=".Inicio_Sesion_Gario"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Gario">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".registro_gario_user"
+            android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

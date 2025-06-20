@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#0F0D3E"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:id="@+id/main"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <!-- Logo -->
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="203dp"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/bienvenido_a_gario"
+            android:src="@drawable/gario_logo_sin_fondo" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondo_blanco"
+            android:elevation="4dp"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+
+            <!-- Campos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:text="@string/bienvenido_a_gario"
+                android:textColor="#0F0D3E"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/nombre_usuario"
+                style="@style/EditTextGario"
+                android:layout_width="298dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:autofillHints="username"
+                android:hint="@string/nombre_de_usuario"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColor="#0F0D3E"
+                android:textColorHint="#4A4A6A" />
+
+            <EditText
+                android:id="@+id/email"
+                style="@style/EditTextGario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="emailAddress"
+                android:hint="@string/Email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColor="#0F0D3E"
+                android:textColorHint="#4A4A6A" />
+
+
+            <EditText
+                android:id="@+id/contrasena"
+                style="@style/EditTextGario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="newPassword"
+                android:hint="@string/Contraseña"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColor="#0F0D3E"
+                android:textColorHint="#4A4A6A" />
+
+
+            <!-- Confirmar Contraseña -->
+            <EditText
+                android:id="@+id/confirmar_contrasena"
+                style="@style/EditTextGario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="password"
+                android:hint="@string/confirmar_contraseña"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                android:textColor="#0F0D3E"
+                android:textColorHint="#4A4A6A" />
+
+            <!-- Texto de cambio -->
+            <Button
+                android:id="@+id/btnRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="#D84315"
+                android:text="@string/registrarme"
+                android:textColor="#0F0D3E"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:text="@string/ya_tienes_una_cuenta"
+                android:textColor="#0F0D3E"
+                android:textSize="14sp" />
+
+            <!-- Línea con "ó" -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="@string/o"
+                android:textColor="#666666" />
+
+            <!-- Iconos sociales -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/google"
+                    android:src="@drawable/google" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/facebook"
+                    android:src="@drawable/facebook" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

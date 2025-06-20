@@ -1,5 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Gario" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Tema principal de la app -->
+    <style name="Theme.Gario" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    </style>
+
+    <!-- Estilo para EditText -->
+    <style name="EditTextGario">
+        <item name="android:background">@drawable/fondo_blanco</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColorHint">#CCCCCC</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Estilo para botones -->
+    <style name="ButtonGario">
+        <item name="android:backgroundTint">#2196F3</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 </resources>

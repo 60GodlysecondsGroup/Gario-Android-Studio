@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Gario</string>
-
+    <!-- Inicio_Sesion_Gario -->
     <string name="login">Login</string>
     <string name="correo_electronico">Correo Electronico</string>
     <string name="contraseña">Contraseña</string>
@@ -11,5 +11,21 @@
     <string name="eslogan">Tu Mejor Opción Para El Ahorro Inteligente</string>
     <string name="cambio">¡Inicia Tu Cambio Ahora!</string>
 
+    <!-- Inicio_sesion_user -->
+    <string name="nombre_de_usuario">Nombre De Usuario</string>
+    <string name="Email">Email</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="confirmar_contraseña">Confirmar Contraseña</string>
+    <string name="bienvenido_a_gario">Bienvenid@ a Gario</string>
+    <string name="o">ó</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="ya_tienes_una_cuenta">¿Ya tienes una cuenta? Iniciar sesión</string>
+
+    <!-- registro_gario_user -->
+    <string name="es_tu_primera_vez">¿Es Tu Primera Vez?</string>
+    <string name="olvidate_tu_contraseña">¿Olvidaste Tú Contraseña?</string>
+    <string name="registrate">Registrate</string>
+    <string name="mostrar_contraseña">Mostrar Contraseña</string>
 
 </resources>
