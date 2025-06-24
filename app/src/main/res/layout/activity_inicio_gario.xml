@@ -16,17 +16,25 @@
         android:orientation="vertical"
         android:fitsSystemWindows="true">
 
-        <!-- Toolbar superior -->
+        <!-- Toolbar blanca -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#0F0D3E"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:titleTextColor="@android:color/white"
+            android:background="@android:color/white"
+            android:elevation="0dp"
+            android:theme="@style/ToolbarThemeLight"
+            app:title="Gario"
+            app:titleTextColor="#0F0D3E"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <!-- Aquí va el contenido principal de tu app -->
+        <!-- ínea azul debajo de la toolbar -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#0F0D3E" />
+
+        <!-- Contenido principal -->
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"

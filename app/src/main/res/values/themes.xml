@@ -20,4 +20,11 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+
+    <style name="ToolbarThemeLight" parent="ThemeOverlay.AppCompat.Light">
+        <!-- Icono hamburguesa (las 3 rayitas) en azul oscuro -->
+        <item name="colorControlNormal">#0F0D3E</item>
+    </style>
+
+
 </resources>
