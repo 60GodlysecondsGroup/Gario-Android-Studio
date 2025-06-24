@@ -1,8 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Tema principal de la app -->
-    <style name="Theme.Gario" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-    </style>
+    <style name="Theme.Gario" parent="Theme.MaterialComponents.DayNight.NoActionBar"></style>
 
     <!-- Estilo para EditText -->
     <style name="EditTextGario">

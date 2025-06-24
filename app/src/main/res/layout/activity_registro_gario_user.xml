@@ -99,7 +99,7 @@
 
             <!-- Texto de cambio -->
             <Button
-                android:id="@+id/btnRegistro"
+                android:id="@+id/registrate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -111,6 +111,7 @@
                 android:typeface="normal" />
 
             <TextView
+                android:id="@+id/iniciar_sesion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

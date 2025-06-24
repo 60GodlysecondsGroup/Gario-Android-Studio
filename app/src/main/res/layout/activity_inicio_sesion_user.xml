@@ -45,7 +45,7 @@
 
             <!-- Email -->
             <EditText
-                android:id="@+id/emailEditText"
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/passwordEditText"
+                    android:id="@+id/contrasena"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:height="48dp"
@@ -124,7 +124,7 @@
                 android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/btnRegistro"
+                android:id="@+id/registrate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

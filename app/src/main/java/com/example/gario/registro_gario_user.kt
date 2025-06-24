@@ -23,14 +23,19 @@ class registro_gario_user : AppCompatActivity() {
         binding.confirmarContrasena.doAfterTextChanged { validarCampos() }
 
 
-        binding.btnRegistro.isEnabled = false
+        binding.registrate.isEnabled = false
 
         // Cuando se presiona el botón como CAMAVALINGO
-        binding.btnRegistro.setOnClickListener {
+        binding.registrate.setOnClickListener {
             Toast.makeText(this, "Registro exitoso. Ahora inicia sesión.", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Inicio_sesion_user::class.java)
             startActivity(intent)
             finish()
+        }
+
+        binding.iniciarSesion.setOnClickListener {
+            val intent =  Intent(this, Inicio_sesion_user::class.java)
+            startActivity(intent)
         }
 
     }
@@ -66,19 +71,14 @@ class registro_gario_user : AppCompatActivity() {
         }
 
         val todoValido = emailValido && camposLlenos && contrasIguales && contrasenaValida
-        binding.btnRegistro.isEnabled = todoValido
+        binding.registrate.isEnabled = todoValido
 
         // Cambia el color del botón  (Especifico esto lo hizo el todopoderoso no yo)
-        binding.btnRegistro.setBackgroundColor(
+        binding.registrate.setBackgroundColor(
             if (todoValido) ContextCompat.getColor(this, R.color.gario_naranja) else Color.GRAY
         )
+
     }
-
-
-
-
-
-
 
 }
 

@@ -27,5 +27,13 @@
     <string name="olvidate_tu_contraseña">¿Olvidaste Tú Contraseña?</string>
     <string name="registrate">Registrate</string>
     <string name="mostrar_contraseña">Mostrar Contraseña</string>
+    <string name="title_activity_inicio_gario">Inicio_Gario</string>
+
+    <!-- inicio_gario -->
+    <string name="inicio">Inicio</string>
+    <string name="historial">Historial</string>
+    <string name="informes">Informes</string>
+    <string name="abrir_menu">Abrir menú</string>
+    <string name="cerrar_menu">Cerrar menú</string>
 
 </resources>
