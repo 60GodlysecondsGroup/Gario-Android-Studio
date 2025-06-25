@@ -9,14 +9,14 @@
     android:fitsSystemWindows="true"
     tools:context=".inicio_gario">
 
-    <!-- Contenido principal -->
+    <!-- CONTENIDO PRINCIPAL -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:fitsSystemWindows="true">
 
-        <!-- Toolbar blanca -->
+        <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -28,20 +28,96 @@
             app:titleTextColor="#0F0D3E"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <!-- ínea azul debajo de la toolbar -->
+        <!-- Línea azul -->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#0F0D3E" />
 
-        <!-- Contenido principal -->
-        <FrameLayout
-            android:id="@+id/content_frame"
+        <!-- Contenido scrolleable -->
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- CUADRO DE MONTO Y GASTOS -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="10dp"
+                    android:backgroundTint="#FFFFFF">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textMonto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Monto actual: $0"
+                                android:textSize="20sp"
+                                android:textColor="#0F0D3E"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="10dp" />
+
+                            <TextView
+                                android:id="@+id/textGastos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Gastos este mes: $0"
+                                android:textSize="18sp"
+                                android:textColor="#0F0D3E" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imagenHormiga"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="22dp"
+                            android:layout_marginBottom="12dp"
+                            android:contentDescription="Hormiga decorativa"
+                            android:src="@drawable/hormiga" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- ULTIMOS MOVIMIENTOS -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Últimos movimientos"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#0F0D3E"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- LISTA DE MOVIMIENTOS -->
+                <LinearLayout
+                    android:id="@+id/lista_movimientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
-    <!-- Menú lateral -->
+    <!-- MENÚ LATERAL -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
