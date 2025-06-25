@@ -36,4 +36,13 @@
     <string name="abrir_menu">Abrir menú</string>
     <string name="cerrar_menu">Cerrar menú</string>
 
+    <!-- Simulaciones de montos (Buenas Practicas) -->
+    <string name="monto_actual">Monto actual: $%1$d</string>
+    <string name="gastos_mes">Gastos este mes: $%1$d</string>
+    <string name="monto_formato">$%1$d</string>
+
+
+
+
+
 </resources>
