@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/casa"/>
+
+    <item
+        android:id="@+id/billete"
+        android:title="@string/billete"
+        android:icon="@drawable/billete"/>
+    <item
+        android:id="@+id/vehiculo"
+        android:title="@string/vehiculo"
+        android:icon="@drawable/carro"/>
+
+
+
+</menu>

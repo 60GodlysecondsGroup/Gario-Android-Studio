@@ -41,6 +41,10 @@
     <string name="gastos_mes">Gastos este mes: $%1$d</string>
     <string name="monto_formato">$%1$d</string>
 
+    <!-- menu_abajo -->
+    <string name="home">home</string>
+    <string name="billete">billete</string>
+    <string name="vehiculo">vehiculo</string>
 
 
 

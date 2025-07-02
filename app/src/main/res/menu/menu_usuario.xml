@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mi_perfil"
+        android:title="Mi perfil"
+        android:icon="@drawable/icono_usuario"
+        app:showAsAction="always" />
+    <item android:id="@+id/configuracion" android:title="Configuración"/>
+    <item android:id="@+id/cambio_divisa" android:title="Cambio divisa"/>
+    <item android:id="@+id/cerrar_sesion" android:title="Cerrar sesión"/>
+    <item android:id="@+id/plan_premium" android:title="Plan premium"/>
+</menu>
+

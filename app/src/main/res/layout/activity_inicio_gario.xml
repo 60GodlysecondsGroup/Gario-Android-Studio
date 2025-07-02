@@ -9,6 +9,15 @@
     android:fitsSystemWindows="true"
     tools:context=".inicio_gario">
 
+    <!-- MENÚ LATERAL -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white"
+        app:menu="@menu/menu" />
+
     <!-- CONTENIDO PRINCIPAL -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +46,8 @@
         <!-- Contenido scrolleable -->
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:padding="16dp">
 
             <LinearLayout
@@ -115,14 +125,16 @@
                     android:orientation="vertical" />
             </LinearLayout>
         </ScrollView>
+
+        <!-- Botton Navegation View (Menu_abajo)-->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/menu_abajo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0F0D3E"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:menu="@menu/menu_abajo"/>
     </LinearLayout>
 
-    <!-- MENÚ LATERAL -->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@android:color/white"
-        app:menu="@menu/menu" />
 </androidx.drawerlayout.widget.DrawerLayout>
