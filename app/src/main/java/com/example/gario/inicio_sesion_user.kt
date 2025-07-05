@@ -27,6 +27,8 @@ class Inicio_sesion_user : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show()
             }
+
+
         }
 
         binding.registrate.setOnClickListener {

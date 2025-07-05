@@ -70,6 +70,20 @@
                 android:textColor="#0F0D3E"
                 android:textColorHint="#4A4A6A" />
 
+            <EditText
+                android:id="@+id/edad"
+                style="@style/EditTextGario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edad"
+                android:inputType="number"
+                android:autofillHints="birthDateDay"
+                android:minHeight="48dp"
+                android:textColor="#0F0D3E"
+                android:textColorHint="#4A4A6A" />
+
+
+
 
             <EditText
                 android:id="@+id/contrasena"
