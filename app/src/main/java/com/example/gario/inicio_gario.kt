@@ -23,19 +23,19 @@ class inicio_gario : AppCompatActivity() {
         binding = ActivityInicioGarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configurar Toolbar
-        setSupportActionBar(binding.toolbar)
+            // Configurar Toolbar
+            setSupportActionBar(binding.toolbar)
 
-        // Configurar DrawerToggle
-        toggle = ActionBarDrawerToggle(
-            this,
-            binding.drawerLayout,
-            binding.toolbar,
-            R.string.abrir_menu,
-            R.string.cerrar_menu
-        )
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+            // Configurar DrawerToggle
+            toggle = ActionBarDrawerToggle(
+                this,
+                binding.drawerLayout,
+                binding.toolbar,
+                R.string.abrir_menu,
+                R.string.cerrar_menu
+            )
+            binding.drawerLayout.addDrawerListener(toggle)
+            toggle.syncState()
 
         // Menú lateral (Navigation Drawer)
         binding.navigationView.setNavigationItemSelectedListener { menuItem ->
@@ -111,7 +111,7 @@ class inicio_gario : AppCompatActivity() {
                 true
             }
             R.id.cerrar_sesion -> {
-                // Acción para Cerrar sesión
+                // Acción par a Cerrar sesión
                 cerrar_sesion()
                 true
             }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -17,11 +16,11 @@
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
         android:src="@drawable/fondo_gario"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <!-- Logo -->
@@ -32,10 +31,10 @@
         android:layout_marginTop="72dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/gario_logo_sin_fondo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503" />
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Eslogan -->
     <TextView
@@ -48,39 +47,42 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/logo"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
 
     <!-- Texto cambio -->
+
+    <!-- Botón Registrarse -->
+
+    <!-- Botón Iniciar Sesión -->
+
     <TextView
         android:id="@+id/cambio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="96dp"
         android:text="@string/cambio"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/eslogan"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/fondo" />
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-    <!-- Botón Registrarse -->
     <Button
         android:id="@+id/registrate"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="156dp"
         android:background="@drawable/boton_redondo"
         android:text="@string/registrarme"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/cambio"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cambio" />
 
-    <!-- Botón Iniciar Sesión -->
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="250dp"
@@ -90,8 +92,8 @@
         android:fontFamily="sans-serif"
         android:text="@string/iniciar_sesion"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/registrate"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/registrate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

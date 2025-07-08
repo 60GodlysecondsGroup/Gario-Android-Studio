@@ -32,7 +32,6 @@ class Inicio_sesion_user : AppCompatActivity() {
         }
 
         binding.registrate.setOnClickListener {
-
             val intent = Intent(this, registro_gario_user::class.java)
             startActivity(intent)
         }

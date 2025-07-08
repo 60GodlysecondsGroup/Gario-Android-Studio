@@ -9,6 +9,14 @@ import android.widget.Toast
 import android.graphics.Color
 import androidx.core.content.ContextCompat
 
+// IMPORTS NECESARIOS PARA RETROFIT
+import com.example.gario.conexion.ClienteRetrofit
+import com.example.gario.conexion.UserRegister
+import com.example.gario.conexion.MessageResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 class registro_gario_user : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegistroGarioUserBinding
@@ -28,10 +36,40 @@ class registro_gario_user : AppCompatActivity() {
         binding.registrate.isEnabled = false
 
         binding.registrate.setOnClickListener {
-            Toast.makeText(this, "Registro exitoso. Ahora inicia sesión.", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, Inicio_sesion_user::class.java)
-            startActivity(intent)
-            finish()
+
+            val nombreUsuario = binding.nombreUsuario.text.toString().trim()
+            val email = binding.email.text.toString().trim()
+            val edadInt = binding.edad.text.toString().toIntOrNull() ?: 0
+            val contrasena = binding.contrasena.text.toString()
+
+            // Crear objeto UserRegister con los datos del formulario
+            val user = UserRegister(
+                name_user = nombreUsuario,
+                email = email,
+                psw = contrasena,
+                edad = edadInt
+            )
+
+            // Llamar al endpoint signup con Retrofit
+            ClienteRetrofit.instance.signup(user).enqueue(object : Callback<MessageResponse> {
+                override fun onResponse(call: Call<MessageResponse>, response: Response<MessageResponse>) {
+                    if (response.isSuccessful) {
+                        val mensaje = response.body()?.mensaje ?: "Registro exitoso"
+                        Toast.makeText(this@registro_gario_user, mensaje, Toast.LENGTH_SHORT).show()
+
+                        // Redirigir al login
+                        val intent = Intent(this@registro_gario_user, Inicio_sesion_user::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(this@registro_gario_user, "Error en el registro", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<MessageResponse>, t: Throwable) {
+                    Toast.makeText(this@registro_gario_user, "Fallo: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
 
         binding.iniciarSesion.setOnClickListener {
