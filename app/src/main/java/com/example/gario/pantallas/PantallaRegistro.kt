@@ -53,7 +53,6 @@ fun PantallaRegistro() {
         }) {
             Text("Registrarse")
         }
-
         Spacer(modifier = Modifier.height(16.dp))
         Text(text = mensaje)
     }
