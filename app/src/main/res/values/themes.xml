@@ -1,7 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Tema principal de la app -->
-    <style name="Theme.Gario" parent="Theme.MaterialComponents.DayNight.NoActionBar"></style>
+    <style name="Theme.Gario" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#0F0D3E</item>
+        <item name="colorPrimaryDark">#0F0D3E</item>
+    </style>
 
     <!-- Estilo para EditText -->
     <style name="EditTextGario">
@@ -20,11 +23,9 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-
+    <!-- Estilo para Toolbar -->
     <style name="ToolbarThemeLight" parent="ThemeOverlay.AppCompat.Light">
-        <!-- Icono hamburguesa (las 3 rayitas) en azul oscuro -->
         <item name="colorControlNormal">#0F0D3E</item>
     </style>
-
 
 </resources>

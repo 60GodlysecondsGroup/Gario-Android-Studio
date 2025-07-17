@@ -2,10 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/mi_perfil"
+        android:id="@+id/menu_user"
         android:title="Mi perfil"
         android:icon="@drawable/icono_usuario"
         app:showAsAction="always" />
+    <item android:id="@+id/mi_perfil" android:title="Perfil"/>
     <item android:id="@+id/configuracion" android:title="Configuración"/>
     <item android:id="@+id/cambio_divisa" android:title="Cambio divisa"/>
     <item android:id="@+id/cerrar_sesion" android:title="Cerrar sesión"/>

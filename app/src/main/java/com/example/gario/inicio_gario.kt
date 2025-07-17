@@ -89,6 +89,11 @@ class inicio_gario : AppCompatActivity() {
         finish()
     }
 
+    private fun mi_perfil(){
+        val intent = Intent(this, perfil_user::class.java)
+        startActivity(intent)
+    }
+
     // Inflar el menú superior (icono de usuario y más opciones)
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_usuario, menu)
@@ -98,8 +103,13 @@ class inicio_gario : AppCompatActivity() {
     // Manejar clics en el menú superior
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.menu_user -> {
+                mi_perfil()
+                true
+            }
             R.id.mi_perfil -> {
                 // Acción para Mi perfil
+                mi_perfil()
                 true
             }
             R.id.configuracion -> {
@@ -111,7 +121,7 @@ class inicio_gario : AppCompatActivity() {
                 true
             }
             R.id.cerrar_sesion -> {
-                // Acción par a Cerrar sesión
+                // Acción para Cerrar sesión
                 cerrar_sesion()
                 true
             }
@@ -122,4 +132,6 @@ class inicio_gario : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
 }
+
