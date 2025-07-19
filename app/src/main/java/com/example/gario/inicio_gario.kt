@@ -11,12 +11,16 @@ import androidx.core.view.GravityCompat
 import com.example.gario.databinding.ActivityInicioGarioBinding
 import com.example.gario.databinding.ItemMovimientoBinding
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.view.View
+import androidx.core.content.ContextCompat
 
 
 class inicio_gario : AppCompatActivity() {
 
     private lateinit var binding: ActivityInicioGarioBinding
     private lateinit var toggle: ActionBarDrawerToggle
+    private var menuVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +51,38 @@ class inicio_gario : AppCompatActivity() {
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
+
+        binding.btnPrincipal.setOnClickListener {
+
+            val naranja = ContextCompat.getColor(this, R.color.gario_naranja)
+            val azul = ContextCompat.getColor(this, R.color.azul_btn)
+
+            if (menuVisible) {
+                binding.btnMenu.visibility = View.GONE
+                binding.btnPrincipal.setImageResource(R.drawable.dinero)
+                binding.btnPrincipal.backgroundTintList = ColorStateList.valueOf(azul)
+                menuVisible = false
+            } else {
+                binding.btnMenu.visibility = View.VISIBLE
+                binding.btnPrincipal.backgroundTintList = ColorStateList.valueOf(naranja)
+                binding.btnPrincipal.setImageResource(R.drawable.cerrar)
+                menuVisible = true
+            }
+        }
+
+        binding.btnNuevoGasto.setOnClickListener {
+            // Acción para nuevo gasto
+            registrar_gasto()
+        }
+
+        binding.btnNuevoIngreso.setOnClickListener {
+            // Acción para nuevo ingreso
+        }
+
+        binding.btnCamara.setOnClickListener {
+            // Acción para cámara o PDF (futuro)
+        }
+
 
 
         // Datos simulados
@@ -91,6 +127,11 @@ class inicio_gario : AppCompatActivity() {
 
     private fun mi_perfil(){
         val intent = Intent(this, perfil_user::class.java)
+        startActivity(intent)
+    }
+
+    private fun registrar_gasto(){
+        val intent = Intent(this, registro_gasto::class.java)
         startActivity(intent)
     }
 

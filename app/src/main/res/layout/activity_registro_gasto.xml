@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".registro_gasto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/textTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nuevo ingreso"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F0D3E"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- CardView para formulario -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="10dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Monto -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Monto:"
+                    android:textSize="16sp"
+                    android:textColor="#0F0D3E"/>
+
+                <TextView
+                    android:id="@+id/textMonto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 0.00"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#0F0D3E"/>
+
+                <!-- Categoría -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categoría"
+                    android:textSize="16sp"
+                    android:textColor="#0F0D3E"/>
+
+                <Spinner
+                    android:id="@+id/spinnerCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:minWidth="48dp"
+                    android:layout_marginBottom="22dp"
+                    android:background="@drawable/borde_redondo"/>
+
+                <!-- Metodo de ingreso -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Método de ingreso"
+                    android:textSize="16sp"
+                    android:textColor="#0F0D3E"/>
+
+                <Spinner
+                    android:id="@+id/spinnerMetodo"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:minHeight="48dp"
+                    android:layout_marginBottom="22dp"
+                    android:background="@drawable/borde_redondo"/>
+
+                <!-- Fecha -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha"
+                    android:textSize="16sp"
+                    android:textColor="#0F0D3E"/>
+
+                <EditText
+                    android:id="@+id/editFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:minWidth="48dp"
+                    android:hint="Selecciona fecha"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/movimiento_fondo"/>
+
+                <!-- Ingreso hormiga -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¿Ingreso hormiga?"
+                    android:textSize="16sp"
+                    android:textColor="#0F0D3E"/>
+
+                <RadioGroup
+                    android:id="@+id/radioGroupHormiga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <RadioButton
+                        android:id="@+id/radioSi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/si"
+                        android:textColor="#0F0D3E"/>
+
+                    <RadioButton
+                        android:id="@+id/radioNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no"
+                        android:textColor="#0F0D3E"/>
+                </RadioGroup>
+
+                <!-- Fuente del ingreso (opcional) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fuente del ingreso (opcional)"
+                    android:textSize="16sp"
+                    android:textColor="#0F0D3E"/>
+
+                <EditText
+                    android:id="@+id/editFuente"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:hint="Ej: hoy pagaron"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:background="@drawable/borde_redondo"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/max"
+                    android:gravity="end"
+                    android:textSize="12sp"
+                    android:textColor="#0F0D3E"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="12dp">
+
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelar"
+                android:backgroundTint="#F67A29"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="20dp"/>
+
+            <Button
+                android:id="@+id/btnAceptar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aceptar"
+                android:backgroundTint="#F67A29"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

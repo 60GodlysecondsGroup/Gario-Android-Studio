@@ -36,6 +36,16 @@
     <string name="informes">Informes</string>
     <string name="abrir_menu">Abrir menú</string>
     <string name="cerrar_menu">Cerrar menú</string>
+    <string name="dinero">Dinero</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="Camara">Camara</string>
+    <string name="nuevo_ingreso">Nuevo Ingreso</string>
+    <string name="nuevo_gasto">Nuevo Gasto</string>
+    <string name="ultimos_movimientos">Ultimos Movimientos</string>
+    <string name="hormiga_decorativa">Hormiga decorativa</string>
+    <string name="si">Si</string>
+    <string name="no">No</string>
+    <string name="max">Max</string>
 
     <!-- Simulaciones de montos (Buenas Practicas) -->
     <string name="monto_actual">Monto actual: $%1$d</string>
