@@ -16,6 +16,12 @@
         android:theme="@style/Theme.Gario"
         tools:targetApi="31">
         <activity
+            android:name=".registro_ingreso"
+            android:exported="false" />
+        <activity
+            android:name=".ui.theme.registro_ingreso"
+            android:exported="false" />
+        <activity
             android:name=".registro_gasto"
             android:exported="false" />
         <activity
@@ -42,7 +48,6 @@
         <activity
             android:name=".registro_gario_user"
             android:exported="false" />
-
 
         <meta-data
             android:name="preloaded_fonts"

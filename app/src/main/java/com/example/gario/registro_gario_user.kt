@@ -88,7 +88,7 @@ class registro_gario_user : AppCompatActivity() {
         val emailValido = android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
         val camposLlenos = nombreUsuario.isNotEmpty() && email.isNotEmpty() && edadStr.isNotEmpty() && contrasena.isNotEmpty() && confirmarContrasena.isNotEmpty()
         val contrasIguales = contrasena == confirmarContrasena
-        val contrasenaValida = contrasena.length >= 6
+        val contrasenaValida = contrasena.length >= 8
 
         // Validar email
         if (!emailValido && email.isNotEmpty()) {
@@ -117,7 +117,7 @@ class registro_gario_user : AppCompatActivity() {
         }
 
         if (!contrasenaValida && contrasena.isNotEmpty()) {
-            binding.contrasena.error = "Mínimo 6 caracteres"
+            binding.contrasena.error = "Mínimo 8 caracteres"
         } else {
             binding.contrasena.error = null
         }

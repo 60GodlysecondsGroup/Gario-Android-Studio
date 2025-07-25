@@ -1,28 +1,26 @@
 package com.example.gario
 
+import android.app.DatePickerDialog
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import com.example.gario.databinding.ActivityRegistroGastoBinding
-import android.app.DatePickerDialog
-import android.graphics.Color
-import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.core.widget.doAfterTextChanged
-import java.util.Calendar
+import com.example.gario.databinding.ActivityRegistroIngresoBinding
 
+class registro_ingreso : AppCompatActivity() {
 
-class registro_gasto : AppCompatActivity() {
-
-    private lateinit var binding: ActivityRegistroGastoBinding
+    private lateinit var binding: ActivityRegistroIngresoBinding
     private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRegistroGastoBinding.inflate(layoutInflater)
+        binding = ActivityRegistroIngresoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         binding.btnAceptar.isEnabled = false
 
@@ -56,7 +54,8 @@ class registro_gasto : AppCompatActivity() {
             true
         }
 
-        val calendar = Calendar.getInstance()
+
+        val calendar = java.util.Calendar.getInstance()
 
         val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
             val fechaSeleccionada = "${dayOfMonth}/${month + 1}/${year}"
@@ -67,9 +66,9 @@ class registro_gasto : AppCompatActivity() {
             DatePickerDialog(
                 this,
                 dateSetListener,
-                calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH)
+                calendar.get(java.util.Calendar.YEAR),
+                calendar.get(java.util.Calendar.MONTH),
+                calendar.get(java.util.Calendar.DAY_OF_MONTH)
             ).show()
         }
 
@@ -77,9 +76,9 @@ class registro_gasto : AppCompatActivity() {
             DatePickerDialog(
                 this,
                 dateSetListener,
-                calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH)
+                calendar.get(java.util.Calendar.YEAR),
+                calendar.get(java.util.Calendar.MONTH),
+                calendar.get(java.util.Calendar.DAY_OF_MONTH)
             ).show()
         }
 
@@ -101,6 +100,7 @@ class registro_gasto : AppCompatActivity() {
         metodoDePago.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerMetodoPago.adapter = metodoDePago
 
+
         binding.editMotivo.doAfterTextChanged { texto ->
             val monto = texto.toString()
             if (monto.length > 200) {
@@ -116,5 +116,4 @@ class registro_gasto : AppCompatActivity() {
 
     }
 
-
-}
+    }

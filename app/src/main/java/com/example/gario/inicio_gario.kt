@@ -77,6 +77,7 @@ class inicio_gario : AppCompatActivity() {
 
         binding.btnNuevoIngreso.setOnClickListener {
             // Acción para nuevo ingreso
+            registrar_ingreso()
         }
 
         binding.btnCamara.setOnClickListener {
@@ -132,6 +133,11 @@ class inicio_gario : AppCompatActivity() {
 
     private fun registrar_gasto(){
         val intent = Intent(this, registro_gasto::class.java)
+        startActivity(intent)
+    }
+
+    private fun registrar_ingreso(){
+        val intent = Intent(this, registro_ingreso::class.java)
         startActivity(intent)
     }
 

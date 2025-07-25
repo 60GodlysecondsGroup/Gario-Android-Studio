@@ -57,5 +57,40 @@
     <string name="billete">billete</string>
     <string name="vehiculo">vehiculo</string>
 
+    <!-- activity_registrar_ingreso-->
+    <string name="registrar_ingreso">Registrar Ingreso</string>
+    <string name="monto">Monto:</string>
+    <string name="plata">$0.00</string>
+    <string name="Categoria">Categoria</string>
+    <string name="selecciona">Selecciona o busca categoría</string>
+    <string name="tipo_de_ingreso">Tipo De Ingreso</string>
+    <string name="metodo_de_pago">Metodo De Pago</string>
+    <string name="fecha">Fecha</string>
+    <string name="seleccione_fecha">Seleccione Fecha:</string>
+    <string name="motivo">Motivo De Ingreso (Opcional)</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="ejemplo">Ej: almuerzo, transporte</string>
+
+    <!-- activity_registrar_ingreso-->
+    <string name="registrar_gasto">Registrar Gasto</string>
+    <string name="tipo_de_gasto">Tipo De Gasto</string>
+    <string name="motivo2">Motivo De Gasto (Opcional)</string>
+
+    <string-array name="metodo_de_ingreso">
+        <item>Salario</item>
+        <item>Pension</item>
+        <item>Prestamo</item>
+        <item>Tarjeta De Credito</item>
+        <item>Otro</item>
+    </string-array>
+
+    <string-array name="tipo_de_gasto">
+        <item>Si</item>
+        <item>No</item>
+
+    </string-array>
+
+
 
 </resources>

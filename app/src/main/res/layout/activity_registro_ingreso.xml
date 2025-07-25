@@ -6,7 +6,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registro_gasto"
+    tools:context=".registro_ingreso"
     android:fitsSystemWindows="true">
 
     <!-- MENÚ LATERAL -->
@@ -37,7 +37,7 @@
                 android:background="@android:color/white"
                 android:elevation="0dp"
                 android:theme="@style/ToolbarThemeLight"
-                app:title="Registro de gasto"
+                app:title="Registro de Ingreso"
                 app:titleTextColor="#0F0D3E"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -64,7 +64,7 @@
                         android:id="@+id/textTitulo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/registrar_gasto"
+                        android:text="@string/registrar_ingreso"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#0F0D3E"
@@ -101,7 +101,8 @@
                                 android:hint="@string/plata"
                                 android:layout_marginBottom="8dp"
                                 android:background="@drawable/borde_redondo"
-                                android:paddingStart="5dp"/>
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"/>
 
                             <!-- Categoría (con búsqueda) -->
                             <TextView
@@ -192,7 +193,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/motivo2"
+                                android:text="@string/motivo"
                                 android:textSize="14sp"
                                 android:textColor="#0F0D3E"/>
 
