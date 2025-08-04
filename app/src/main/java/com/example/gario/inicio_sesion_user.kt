@@ -2,12 +2,14 @@ package com.example.gario
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gario.conexion.ClienteRetrofit
 import com.example.gario.conexion.UserLogin
 import com.example.gario.conexion.LoginResponse
 import com.example.gario.databinding.ActivityInicioSesionUserBinding
+import com.example.gario.util.TokenManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,7 +17,7 @@ import retrofit2.Response
 class Inicio_sesion_user : AppCompatActivity() {
 
     private lateinit var binding: ActivityInicioSesionUserBinding
-
+// EL ACTIVITY INCLUYE RESPUESTAS EN LOG Y TOAST PARA VERFICIAR CONECTIVIDAD (QUITAR LUEGO)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInicioSesionUserBinding.inflate(layoutInflater)
@@ -33,10 +35,18 @@ class Inicio_sesion_user : AppCompatActivity() {
                         if (response.isSuccessful) {
                             val loginResponse = response.body()
                             if (loginResponse != null && loginResponse.auth) {
+                                val token = loginResponse.token
+
                                 Toast.makeText(this@Inicio_sesion_user, "Inicio de sesión exitoso", Toast.LENGTH_LONG).show()
-                                val intent = Intent(this@Inicio_sesion_user, inicio_gario::class.java)
+                                val intent = Intent(this@Inicio_sesion_user, Inicio_gario::class.java)
+
+                                val tokenManager = TokenManager(applicationContext)
+                                tokenManager.saveToken(token, applicationContext)
+                                Log.d("LOGIN", "Token guardado: $token")
+
                                 startActivity(intent)
                                 finish()
+
                             } else {
                                 Toast.makeText(this@Inicio_sesion_user, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
                             }

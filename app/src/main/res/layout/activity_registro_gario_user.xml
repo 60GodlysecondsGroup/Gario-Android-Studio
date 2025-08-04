@@ -16,6 +16,7 @@
 
         <!-- Logo -->
         <ImageView
+            android:id="@+id/Garioping"
             android:layout_width="200dp"
             android:layout_height="203dp"
             android:layout_marginBottom="24dp"

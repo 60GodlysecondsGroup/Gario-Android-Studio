@@ -7,6 +7,7 @@ import androidx.core.widget.doAfterTextChanged
 import android.content.Intent
 import android.widget.Toast
 import android.graphics.Color
+import android.util.Log
 import androidx.core.content.ContextCompat
 
 // IMPORTS NECESARIOS PARA RETROFIT
@@ -16,6 +17,8 @@ import com.example.gario.conexion.MessageResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.math.log
+
 
 class registro_gario_user : AppCompatActivity() {
 
@@ -44,11 +47,25 @@ class registro_gario_user : AppCompatActivity() {
 
             // Crear objeto UserRegister con los datos del formulario
             val user = UserRegister(
-                name_user = nombreUsuario,
+                username = nombreUsuario,
                 email = email,
                 psw = contrasena,
                 edad = edadInt
             )
+// USO DE LAS COMPROBACIONES DE CONEXION
+            ClienteRetrofit.instance.ping().enqueue(object : Callback<MessageResponse> {
+                override fun onResponse(call: Call<MessageResponse>, response: Response<MessageResponse>) {
+                    if (response.isSuccessful) {
+                        Log.d("Ping", "Respuesta: ${response.body()?.mensaje}")
+                    } else {
+                        Log.e("Ping", "Falló con código ${response.code()}")
+                    }
+                }
+
+                override fun onFailure(call: Call<MessageResponse>, t: Throwable) {
+                    Log.e("Ping", "Error: ${t.message}")
+                }
+            })
 
             // Llamar al endpoint signup con Retrofit
             ClienteRetrofit.instance.signup(user).enqueue(object : Callback<MessageResponse> {
@@ -63,11 +80,34 @@ class registro_gario_user : AppCompatActivity() {
                         finish()
                     } else {
                         Toast.makeText(this@registro_gario_user, "Error en el registro", Toast.LENGTH_SHORT).show()
+
                     }
                 }
 
                 override fun onFailure(call: Call<MessageResponse>, t: Throwable) {
-                    Toast.makeText(this@registro_gario_user, "Fallo: ${t.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@registro_gario_user, "Fallo: ${t.message}", Toast.LENGTH_LONG).show()
+                    Log.e("RegistroError", "Fallo en la conexión: ${t.message}", t)
+
+                }
+            })
+        }
+
+        // CREE UN BOTON PARA HACER EL PING EN LA IMAGEN, SOLO POR TEST
+        binding.Garioping.setOnClickListener {
+            ClienteRetrofit.ping.ping().enqueue(object : Callback<MessageResponse> {
+                override fun onResponse(call: Call<MessageResponse>, response: Response<MessageResponse>) {
+                    if (response.isSuccessful) {
+                        Toast.makeText(this@registro_gario_user, "Conexión OK: ${response.body()?.mensaje}", Toast.LENGTH_SHORT).show()
+                        Log.d("Ping", "Respuesta: ${response.body()?.mensaje}")
+                    } else {
+                        Toast.makeText(this@registro_gario_user, "Error en el backend: ${response.code()}", Toast.LENGTH_SHORT).show()
+                        Log.e("Ping", "Error HTTP: ${response.code()}")
+                    }
+                }
+
+                override fun onFailure(call: Call<MessageResponse>, t: Throwable) {
+                    Toast.makeText(this@registro_gario_user, "Fallo de conexión: ${t.message}", Toast.LENGTH_LONG).show()
+                    Log.e("Ping", "Fallo al conectar: ${t.message}", t)
                 }
             })
         }
@@ -76,6 +116,8 @@ class registro_gario_user : AppCompatActivity() {
             val intent = Intent(this, Inicio_sesion_user::class.java)
             startActivity(intent)
         }
+
+
     }
 
     private fun validarCampos() {

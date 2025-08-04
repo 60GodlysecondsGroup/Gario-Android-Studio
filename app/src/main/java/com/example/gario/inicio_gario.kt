@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -13,10 +12,23 @@ import com.example.gario.databinding.ItemMovimientoBinding
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.view.View
+// Importe toast para hacer una prueba de respuesta con el back end y verlo mas claramente
+// Se va quitar luego
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 
+// Tambien todas estas librerias se van a quitar luego
+// Es tema de conexion con el back-end/endpoints
 
-class inicio_gario : AppCompatActivity() {
+import com.example.gario.conexion.CMGastoIngreso
+import com.example.gario.conexion.ClienteRetrofit
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
+
+// Cambie el nombre de la clase a Inicio_gario que el debugger tiro un warning por inciar en minuscula
+class Inicio_gario : AppCompatActivity() {
 
     private lateinit var binding: ActivityInicioGarioBinding
     private lateinit var toggle: ActionBarDrawerToggle
@@ -69,15 +81,75 @@ class inicio_gario : AppCompatActivity() {
                 menuVisible = true
             }
         }
-
         binding.btnNuevoGasto.setOnClickListener {
-            // Acción para nuevo gasto
-            registrar_gasto()
-        }
 
+            
+//  HACEMOS LA PETICION DE LOS DATOS DESDE ANTES DE CARGAR EL ACTIVITY "REGISTRO_GASTO"
+            ClienteRetrofit.catalogo.CMGastos().enqueue(object : Callback<List<CMGastoIngreso>> {
+                override fun onResponse(
+                    call: Call<List<CMGastoIngreso>>,
+                    response: Response<List<CMGastoIngreso>>
+                ) {
+                    if (response.isSuccessful) {
+                        val items = response.body() ?: emptyList()
+
+                        val tiposGasto = items.filter { it.SECCION == 1 }.map { it.NOMBRE }
+                        val metodosPago = items.filter { it.SECCION == 2 }.map { it.NOMBRE }
+
+                        val intent = Intent(this@Inicio_gario, registro_gasto::class.java).apply {
+                            putStringArrayListExtra("tiposGasto", ArrayList(tiposGasto))
+                            putStringArrayListExtra("metodosPago", ArrayList(metodosPago))
+                        }
+
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(
+                            this@Inicio_gario,
+                            "Error al cargar catálogo",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+                override fun onFailure(call: Call<List<CMGastoIngreso>>, t: Throwable) {
+                    Toast.makeText(
+                        this@Inicio_gario,
+                        "Fallo de conexión: ${t.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            })
+        }
         binding.btnNuevoIngreso.setOnClickListener {
+
             // Acción para nuevo ingreso
-            registrar_ingreso()
+
+            //  HACEMOS LA PETICION DE LOS DATOS DESDE ANTES DE CARGAR EL ACTIVITY "REGISTRO_INGRESO"
+            ClienteRetrofit.catalogo.CMIngresos().enqueue(object : Callback<List<CMGastoIngreso>> {
+                override fun onResponse(
+                    call: Call<List<CMGastoIngreso>>,
+                    response: Response<List<CMGastoIngreso>>
+                ) {
+                    if (response.isSuccessful) {
+                        val items = response.body() ?: emptyList()
+
+                        val tiposIngreso = items.filter { it.SECCION == 1 }.map { it.NOMBRE }
+                        val metodosPago = items.filter { it.SECCION == 2 }.map { it.NOMBRE }
+
+                        val intent = Intent(this@Inicio_gario, registro_ingreso::class.java).apply {
+                            putStringArrayListExtra("tiposGasto", ArrayList(tiposIngreso))
+                            putStringArrayListExtra("metodosPago", ArrayList(metodosPago))
+                        }
+
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this@Inicio_gario, "Error al cargar catálogo", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<List<CMGastoIngreso>>, t: Throwable) {
+                    Toast.makeText(this@Inicio_gario, "Fallo de conexión: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
 
         binding.btnCamara.setOnClickListener {
@@ -130,8 +202,10 @@ class inicio_gario : AppCompatActivity() {
         val intent = Intent(this, perfil_user::class.java)
         startActivity(intent)
     }
-
+/*  CREE OTRO INTENT DENTRO DEL BOTON, LUEGO VOLVEREMOS A USAR ESTOS
+    FUE POR COMODIDAD DE PRUEBAS DE LA CONEXION CON EL BACKEND
     private fun registrar_gasto(){
+
         val intent = Intent(this, registro_gasto::class.java)
         startActivity(intent)
     }
@@ -140,7 +214,7 @@ class inicio_gario : AppCompatActivity() {
         val intent = Intent(this, registro_ingreso::class.java)
         startActivity(intent)
     }
-
+*/
     // Inflar el menú superior (icono de usuario y más opciones)
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_usuario, menu)

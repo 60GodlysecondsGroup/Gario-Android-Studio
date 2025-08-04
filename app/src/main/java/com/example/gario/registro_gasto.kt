@@ -82,24 +82,26 @@ class registro_gasto : AppCompatActivity() {
                 calendar.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
+// VARIABLES PARA RECIBIR LOS DATOS DESDE ACTIVITY "INICIO_GARIO" PARA EL SPINNER
+// QUEDA PENDIENTE EL DE AUTO-RELLENADO DE LOS CAMPOS
+        val tiposGasto = intent.getStringArrayListExtra("tiposGasto") ?: arrayListOf()
+        val metodosPago = intent.getStringArrayListExtra("metodosPago") ?: arrayListOf()
 
-        val tipoDeGasto = ArrayAdapter.createFromResource(
+        val adapterTipos = ArrayAdapter(
             this,
-            R.array.tipo_de_gasto,
-            android.R.layout.simple_spinner_item
+            android.R.layout.simple_spinner_item,
+            tiposGasto
         )
-        tipoDeGasto.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spinnerTipoGasto.adapter = tipoDeGasto
+        adapterTipos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinnerTipoGasto.adapter = adapterTipos
 
-
-
-        val metodoDePago = ArrayAdapter.createFromResource(
+        val adapterMetodos = ArrayAdapter(
             this,
-            R.array.metodo_de_ingreso,
-            android.R.layout.simple_spinner_item
+            android.R.layout.simple_spinner_item,
+            metodosPago
         )
-        metodoDePago.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spinnerMetodoPago.adapter = metodoDePago
+        adapterMetodos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinnerMetodoPago.adapter = adapterMetodos
 
         binding.editMotivo.doAfterTextChanged { texto ->
             val monto = texto.toString()

@@ -77,20 +77,4 @@
     <string name="tipo_de_gasto">Tipo De Gasto</string>
     <string name="motivo2">Motivo De Gasto (Opcional)</string>
 
-    <string-array name="metodo_de_ingreso">
-        <item>Salario</item>
-        <item>Pension</item>
-        <item>Prestamo</item>
-        <item>Tarjeta De Credito</item>
-        <item>Otro</item>
-    </string-array>
-
-    <string-array name="tipo_de_gasto">
-        <item>Si</item>
-        <item>No</item>
-
-    </string-array>
-
-
-
 </resources>
